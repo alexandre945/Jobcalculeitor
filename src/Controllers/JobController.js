@@ -10,14 +10,14 @@ module.exports = {
     save(req, res) {
       const jobs = Job.get()
       const lastId = jobs[jobs.length - 1] ? jobs[jobs.length - 1].id : 1
-
-      jobs.push({
-        id: lastId + 1,
-        name: req.body.name,
-        "daily-hours": req.body["daily-hours"], 
-        "total-hours": req.body["total-hours"], 
-        created_at: Date.now()
-      })
+     Job.create({
+      id: lastId + 1,
+      name: req.body.name,
+      "daily-hours": req.body["daily-hours"], 
+      "total-hours": req.body["total-hours"], 
+      created_at: Date.now()
+    });
+      
 
       return res.redirect('/')
     },
