@@ -4,7 +4,8 @@ const Profile = require('../model/Profile')
 
 module.exports = {
     create(req, res) {
-      return res.render("job")
+      const profile = await Profile.get();
+      return res.render("job", {profile});
     },
 
     save(req, res) {

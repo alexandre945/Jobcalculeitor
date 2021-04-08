@@ -1,24 +1,38 @@
-const Profile = require('../model/Profile')
+const Profile = require("../model/Profile");
 
 module.exports = {
-   async index(req, res) {
-      return res.render("profile",{ profile: await Profile.get()})
+    async index(req, res) {
+        return res.render("profile", { profile: await Profile.get() })
     },
-   async update(req, res) {
-      const data = await req.body
-      const weeksPerYear = await 52
-      const weeksPerMonth =  await (weeksPerYear - data["vacation-per-year"] ) / 12
-      const weekTotalHours  = await data["hours-per-day"] * data["days-per-week"]
-      const monthlyTotalHours = await weekTotalHours * weeksPerMonth
-      const valueHour = await data["monthly-budget"] / monthlyTotalHours
 
-     const profile = await Profile.get()
+    async update(req, res) {
+        // req.body para pegar os dados
+        const data = req.body;
 
-      Profile.update({
-        ... profile,
-        ...req.body,
-        "value-hour": valueHour
-      });
-      return res.redirect('/profile')
-    },
-  }
+        // definir quantas semanas tem em 01 ano: 52
+        const weeksPerYear = 52;
+
+        // remover as semanas de férias, para obter quantas semanas uteis de trabalho há no mês...
+        const weeksPerMonth = (weeksPerYear - data["vacation-per-year"]) / 12;
+        
+        // total de horas trabalhadas na semana
+        const weeksTotalHours = data["hours-per-day"] * data["days-per-week"];
+
+        // horas trabalhadas no mês
+        const monthlyTotalHours = weeksTotalHours * weeksPerMonth;
+
+        // qual será o valor da minha hora ?
+        const valueHour = data["monthly-budget"] / monthlyTotalHours;
+        
+        const profile = await Profile.get();
+
+        // Spred = Espalhar...
+        await Profile.update({
+            ...profile,
+            ...req.body,
+            "value-hour": valueHour
+        });
+
+        return res.redirect("/profile");
+    }
+}
