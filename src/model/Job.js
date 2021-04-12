@@ -24,19 +24,18 @@ module.exports = {
     async update(updatedJob, jobId){ 
       const db = await Database() 
       await db.run(`UPDATE jobs SET 
-          name = '${updatedJob.name}', 
-          daily_hours = ${updatedJob["daily-hours"]}, 
-          total_hours = ${updatedJob["total-hours"]},
-          created_at = ${updatedJob.created_at} 
+            name = '${updatedJob.name}', 
+            daily_hours = ${updatedJob["daily-hours"]}, 
+            total_hours = ${updatedJob["total-hours"]}
             WHERE id = ${jobId} `) 
        await db.close()
     },
     async delete(id) {
         const db = await Database();
 
-        await db.run(`DELETE FROM jobs WHERE id = ${id}`);
+        await db.run(`DELETE FROM jobs WHERE id = ${id}`)
 
-        await db.close();
+        await db.close()
     },
     
     async create(newJob) {

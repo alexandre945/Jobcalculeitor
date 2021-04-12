@@ -1,4 +1,4 @@
-const Job = require("../model/job");
+const Job = require("../model/Job");
 const Profile = require("../model/Profile");
 const JobUtils = require("../utils/JobUtils");
 
@@ -49,12 +49,12 @@ module.exports = {
             "daily-hours": req.body["daily-hours"]
         }
 
-        await Job.update(updatedJob, jobId);
+        await Job.update(updatedJob, jobId)
 
-        res.redirect("/")
+        res.redirect('/')
     },
 
-    delete (req, res) {
+    async delete (req, res) {
         const jobId = req.params.id;
 
         await Job.delete(jobId);
