@@ -1,31 +1,60 @@
-let data = [
-    {
-      id: 1,
-      name: "Pizzaria Bom Sabor",
-      "daily-hours": 2, 
-      "total-hours": 1, 
-      created_at: Date.now()
-    },
-    {
-      id: 2,
-      name: "OneTwo Project",
-      "daily-hours": 3, 
-      "total-hours": 47, 
-      created_at: Date.now()
-    }
-  ];
+const Database = require("../db/config");
 
-  module.exports = {
-      get(){
-          return data
-      },
-      update(newJob){
-        data = newJob
-      },
-      delete(id){
-        data = data.filter(job => Number(job.id) !== Number(id))
-      },
-      create(newJob){
-        data.push(newJob)
-      }
-  }
+module.exports = {
+    async get() {
+        const db = await Database();
+
+        // all diferente de get...
+        const jobs = await db.all("SELECT * FROM jobs");
+
+        await db.close();
+
+        // return data;
+        return jobs.map(job => ({
+            
+                id: job.id,
+                name: job.name,
+                "daily-hours": job.daily_hours,
+                "total-hours": job.total_hours,
+                created_at: job.created_at
+                       
+        }));
+    },
+
+    async update(job, id){ 
+      const db = await Database() 
+      await db.run(`UPDATE jobs SET 
+          name = '${job.name}', 
+          daily_hours = ${job.dailyHours}, 
+          total_hours = ${job.totalHours} 
+      WHERE id = ${id} `) 
+       await db.close()
+    },
+    async delete(id) {
+        const db = await Database();
+
+        await db.run(`DELETE FROM jobs WHERE id = ${id}`);
+
+        await db.close();
+    },
+    
+    async create(newJob) {
+        const db = await Database()
+
+        await db.run(`INSERT INTO jobs (
+          name,
+          daily_hours,
+          total_hours,
+          created_at
+          )
+           VALUES (
+            "${newJob.name}",
+            ${newJob["daily-hours"]},
+            ${newJob["total-hours"]},
+            ${newJob.created_at}
+            
+        )`)
+
+        await db.close()
+    }
+};

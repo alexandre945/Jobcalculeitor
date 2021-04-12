@@ -1,15 +1,15 @@
 const Database = require("../db/config");
 
-const FreeHours = {
+ const FreeHours = {
     value: 3,
-    Message() {
-        let sMessage;
+     Message() {
+         let sMessage;
 
         if (FreeHours.value <= 0) { sMessage = "Você não possui disponilidade para novos trabalhos!"; }
         else if (FreeHours.value == 1) { sMessage = "Você possui apenas uma hora livre no seu dia."}
         else if (FreeHours.value > 1) { sMessage = `Você tem ${Number(FreeHours.value)} horas livres no seu dia` }
 
-        return sMessage;
+         return sMessage;
     }
 }
 

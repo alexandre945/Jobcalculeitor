@@ -14,7 +14,7 @@ await db.exec(`CREATE TABLE profile (
     hours_per_day INT,
     vacation_per_year INT,
     value_hour INT
-)`);
+)`)
 
 await db.exec(`CREATE TABLE jobs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
