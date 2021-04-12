@@ -26,14 +26,38 @@ form .input-group {
 
 form .input-group .input-wrapper + .input-wrapper {
   margin-left: 1.5rem;
+  color: white;
+  background-color: 	#484d50f8 ;
+  height: 40px;
+}
+form .input-group .input-wrapper {
+ margin-left: 1.5rem;
+  color:white;
+  background-color: 	#484d50f8 ;
+  height: 40px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+form .input-wrapper {
+  margin-left: 1.5rem;
+  color:white;
+  background-color: 	#484d50f8 ;
+  height: 40px;
+  border-radius: 6px;
+  width: 250px;
+}
+.input-wrapper {
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
+
 label {
-  display: inline-block;
+  display: inline-block; 
 
   font-family: IBM Plex Sans;
   font-weight: 500;
-  color: #787880;
+  color: white;
 
   margin-bottom: 1rem;
 }
@@ -41,19 +65,20 @@ label {
 input {
   font-family: IBM Plex Sans;
   font-weight: 500;
+  color: white;
 
-  background: #FCFDFF;
+   background: #787880;
 
-  border: 1px solid #E1E3E6;
+  border: 1px solid 1px black;
   border-radius: .313rem;
 
   padding: 0.75rem 1.5rem;
 
   width: 100%;
 
-  color: var(--color-card-title);
+ 
 }
 
-::placeholder {
+::placeholder { 
   color: #BFBFCC;
-}
+} 

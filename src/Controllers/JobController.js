@@ -41,15 +41,15 @@ module.exports = {
     },
 
     async update (req, res) {
-        const jobId = req.params.id;
+        const jobId = req.params.id
         
-        const updatedJob = {
+         const updatedJob = {
             name: req.body.name,
             "total-hours": req.body["total-hours"],
             "daily-hours": req.body["daily-hours"]
         }
 
-        Job.update(updatedJob, jobId);
+        await Job.update(updatedJob, jobId);
 
         res.redirect("/")
     },
@@ -57,7 +57,7 @@ module.exports = {
     delete (req, res) {
         const jobId = req.params.id;
 
-        Job.delete(jobId);
+        await Job.delete(jobId);
 
         return res.redirect("/")
     }

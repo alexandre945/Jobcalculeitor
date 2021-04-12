@@ -1,7 +1,7 @@
-import Modal from './modal.js';
+ import Modal from './modal.js';
 
-const modal = Modal({ animateClasses: ['animate-pop', 'back'] })
+ const modal = Modal({ animateClasses: ['animate-pop', 'back'] })
 
-document
+ document
   .querySelector('.open-modal')
   .addEventListener('click', modal.open)
