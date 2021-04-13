@@ -13,6 +13,7 @@ form fieldset legend {
   font-weight: 600;
   font-size: 2rem;
   line-height: 2.625rem;
+  
 }
 
 fieldset .separator {
@@ -21,22 +22,28 @@ fieldset .separator {
 
 form .input-group {
   display: flex;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 form .input-group .input-wrapper + .input-wrapper {
   margin-left: 1.5rem;
   color: white;
   background-color: 	#484d50f8 ;
-  height: 40px;
+  height: 60px;
+  width: 300px;
+  padding-left: 10px;
 }
 form .input-group .input-wrapper {
  margin-left: 1.5rem;
   color:white;
   background-color: 	#484d50f8 ;
-  height: 40px;
+  height: 60px;
+  width: 300px;
   border-radius: 6px;
-  margin-top: 20px;
+  margin-top: 30px;
+  padding-left: 10px;
+
 }
 form .input-wrapper {
   margin-left: 1.5rem;
@@ -44,41 +51,42 @@ form .input-wrapper {
   background-color: 	#484d50f8 ;
   height: 40px;
   border-radius: 6px;
-  width: 250px;
+  width: 300px;
+  padding-left: 10px;
 }
 .input-wrapper {
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  height: 150px;
+  padding-left: 10px;
 }
 
 
 label {
   display: inline-block; 
-
+  padding-top: 0,75px;
+  padding-bottom: 3px;
   font-family: IBM Plex Sans;
   font-weight: 500;
+  font-size: 15px;
   color: white;
-
-  margin-bottom: 1rem;
+margin-top: 2px;
+ margin-bottom: 0,7rem; 
+ border-radius: 6px;
 }
+
 
 input {
   font-family: IBM Plex Sans;
   font-weight: 500;
   color: white;
-
    background: #787880;
-
   border: 1px solid 1px black;
   border-radius: .313rem;
-
-  padding: 0.75rem 1.5rem;
-
+  padding: 1rem 1rem;
   width: 100%;
-
- 
+  font-size: 20px;
 }
-
 ::placeholder { 
   color: #BFBFCC;
 } 

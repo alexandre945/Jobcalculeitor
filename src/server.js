@@ -18,4 +18,4 @@ server.use(express.urlencoded({ extended: true }))
 // routes
 server.use(routes)
 
-server.listen(8081, () => console.log('servidor rodando porta:8081'))
+server.listen(8081, () => console.log('servidor rodando na url localhost:8081'))
