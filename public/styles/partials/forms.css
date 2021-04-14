@@ -74,6 +74,12 @@ margin-top: 2px;
  margin-bottom: 0,7rem; 
  border-radius: 6px;
 }
+a #avatar-profile :hover {
+  background: #31313b;
+}
+span :hover {
+  background: #787880;
+}
 
 
 input {

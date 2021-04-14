@@ -11,6 +11,9 @@ aside.card {
 aside > img {
   margin-bottom: 1.5rem;
 }
+aside > img :hover {
+  background: #31313b;
+}
 
 aside p {
   margin-bottom: 1.75rem;
@@ -20,10 +23,16 @@ aside p {
   font-size: 1rem;
   line-height: 1.625rem;
 }
+aside p :hover{
+  background: 31313b;
+}
 
 aside .button img {
   width: 1.5rem;
   height: 1.5rem;
+}
+aside .button img :hover {
+  background: #31313b;
 }
 
 aside .button + .button {

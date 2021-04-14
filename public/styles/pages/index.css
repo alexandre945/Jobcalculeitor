@@ -46,6 +46,7 @@
   font-weight: 600;
 }
 
+
 #avatar-profile span {
   display: block;
 
@@ -57,15 +58,16 @@
 }
 
 #avatar-profile p span:hover {
-  text-decoration: underline;
-  color:var(--color-secondary);
+   text-decoration: underline; 
+   color:var(--color-secondary); 
+  
 }
 
 #avatar-profile img {
   width: 4rem; /* 64px of 16px root*/
   height: 4rem; /* 64px of 16px root*/
   border-radius: 50%;
-  border: 0.156rem solid #F1972C; /* 2.5px of 16px root*/
+  border: 0.156rem solid #484d50f8; /* 2.5px of 16px root*/
 }
 
 /* 

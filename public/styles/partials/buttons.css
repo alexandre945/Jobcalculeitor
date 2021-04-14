@@ -28,7 +28,7 @@ button.button {
 }
 
 .button.orange:hover {
-  background: #FA9C2D
+  background: #484d50f8;
 }
 
 .button.green {
@@ -37,7 +37,7 @@ button.button {
 }
 
 .button.green:hover {
-  background: #3CC73C;
+  background: 	#484d50f8;
 }
 
 .button.gray {
@@ -46,7 +46,7 @@ button.button {
 }
 
 .button.gray:hover {
-  background: #ECEEF0;
+  background: #484d50f8;
 }
 
 .button.red {
@@ -55,7 +55,7 @@ button.button {
 }
 
 .button.red:hover {
-  background: #FA3F38;
+  background: #484d50f8;
 }
 
 .button.white {
