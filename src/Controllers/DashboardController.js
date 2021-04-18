@@ -7,6 +7,7 @@ module.exports = {
   async index(req, res) {
     const jobs = await Job.get();
     const profile = await Profile.get();
+  
     let statusCount = {
         progress: 0,
         done: 0,
